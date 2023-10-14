@@ -27,25 +27,25 @@ app.use(cors({
  app.use('/api/auth', require('./routes/auth'))
  app.use('/api/notes', require('./routes/notes'))
 
- // --------------------------deployment------------------------------
+//  // --------------------------deployment------------------------------
 
-const __dirn=path.resolve()
-const __dirname1 = path.resolve(__dirn,'..');
+// const __dirn=path.resolve()
+// const __dirname1 = path.resolve(__dirn,'..');
 
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "/powerai/build")));
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname1, "/powerai/build")));
 
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "powerai", "build", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running..");
-  });
-}
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.resolve(__dirname1, "powerai", "build", "index.html"))
+//   );
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("API is running..");
+//   });
+// }
 
-// --------------------------deployment------------------------------
+// // --------------------------deployment------------------------------
 
  app.post("/", async(req,res)=>{
     try{
