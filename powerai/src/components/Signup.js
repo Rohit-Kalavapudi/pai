@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useNavigate} from 'react'
 // import { useHistory } from 'react-router-dom'
 
 
 const Signup = (props) => {
     const [credentials, setCredentials] = useState({name:"", email: "", password: ""}) 
     // let history = useHistory();
-
+    let navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch("https://pai-backend.onrender.com/api/auth/createuser", {
