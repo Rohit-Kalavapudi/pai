@@ -9,7 +9,7 @@ const Login = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("hello");
-        const response = await fetch("https://pai-backend.onrender.com", {
+        const response = await fetch("https://pai-backend.onrender.com/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
