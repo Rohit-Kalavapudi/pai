@@ -13,7 +13,7 @@ import { api } from '../components/api';
 
 
 export const NoteState = ({children}) =>{
-    const host = "http://localhost:10000"
+    const host = "https://pai-backend.onrender.com"
     const notesInitial = []
     if(localStorage.getItem('token')==null)
     {
