@@ -8,7 +8,7 @@ const Signup = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("https://pai-backend.onrender.com", {
+        const response = await fetch("https://pai-backend.onrender.com/api/auth/createuser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -24,7 +24,8 @@ const Signup = (props) => {
             console.log(json.token)
             console.log(localStorage.getItem('token')) 
             
-
+            navigate("/login");     
+            window.location.reload();
         }
         else{
             alert("Email already taken. Try another email");
