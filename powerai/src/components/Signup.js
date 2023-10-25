@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-// import {  useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom'
 
 
@@ -26,7 +26,7 @@ const Signup = (props) => {
             console.log(json.token)
             console.log(localStorage.getItem('token')) 
             
-            // navigate("/login");     
+            navigate("/login");     
             window.location.reload();
         }
         else{
