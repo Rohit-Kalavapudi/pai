@@ -1,5 +1,5 @@
 export const api=async(query)=>{
-    const data = await fetch('http://localhost:4000',{
+    const data = await fetch('https://pai-backend.onrender.com',{
         method:'POST',
         headers:{
         'Content-Type' : 'application/json'
