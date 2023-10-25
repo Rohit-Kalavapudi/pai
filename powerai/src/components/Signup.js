@@ -8,7 +8,7 @@ const Signup = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:4000/api/auth/createuser", {
+        const response = await fetch("https://pai-backend.onrender.com", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
