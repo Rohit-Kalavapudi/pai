@@ -19,31 +19,34 @@ import { useEffect, useState } from 'react';
 function App() {
   const NavbarContainer = styled.div`
   background-color: #333;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+`;
+
+const WebsiteName = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
 `;
 
 const NavItem = styled.a`
-  color: #fff;
+  color: white;
   text-decoration: none;
-  margin-right: 20px;
-  font-size: 16px;
-  cursor: pointer;
+  margin: 0 10px;
 
-  &:hover {
-    text-decoration: underline;
+  @media (max-width: 768px) {
+    margin: 10px 0;
   }
 `;
-const WebsiteName = styled.span`
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: default;
-`;
+
   const [name, setName] = useState("Anonymous")
   useEffect(() => {
     setName((prevState) => {
@@ -54,22 +57,19 @@ const WebsiteName = styled.span`
   
   return (
     <>
-    <div style={{ minHeight: '94vh'}}>
-      <NavbarContainer >
-      <WebsiteName href="/">POWERAI</WebsiteName>
-      <NavItem href="/">Home</NavItem>
-      <NavItem href="/chat">Chat</NavItem>
-      {name === "Anonymous" ? (
+    <div style={{ minHeight: '90vh'}}>
+      <NavbarContainer>
+        <WebsiteName href="/">POWERAI</WebsiteName>
+        <NavItem href="/">Home</NavItem>
+        <NavItem href="/chat">Chat</NavItem>
+        {name === 'Anonymous' ? (
           <NavItem href="/login">Login</NavItem>
         ) : (
           <NavItem href="/logout">Logout</NavItem>
         )}
-      <NavItem>Hello, {name}</NavItem>
-      
-
-    </NavbarContainer>
-    <br/>
-    <br/><br/>
+        <NavItem style={{color:'white'}}>Hello, {name}</NavItem>
+      </NavbarContainer>
+    
       <Routes>
       <Route path="/" element={<Grid/>} />
         <Route exact path="/chat" element={<Chat/>} />

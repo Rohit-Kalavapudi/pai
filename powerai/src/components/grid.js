@@ -16,6 +16,8 @@ import AudioChat from './AudioChat';
 import styled from 'styled-components';
 
 
+const Body = styled.div`
+  min-height:78.6vh`;
 const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -67,11 +69,14 @@ const CardLink = styled.a`
 const Grid = () => {
   return (
     <>
+    <Body>
+    <br/>
     <center>
     <h2>TRY OUR WIDE RANGE OF FUNCTIONS</h2>
     </center>
     <br/>
     <br/>
+    
     <CardContainer>
       <Card>
         <CardIcon src="https://static.cdnlogo.com/logos/c/18/ChatGPT_350x350.png" alt="Chat Icon" />
@@ -105,6 +110,8 @@ const Grid = () => {
         <CardLink href="/audiochat">Voice to Text</CardLink>
       </Card>
     </CardContainer>
+    <br/>
+    </Body>
     </>
   );
 };
