@@ -35,8 +35,9 @@ export const PreviousChat = () => {
   return (
     <div className="row-3">
       <div className="PreviousChat">
+        <center>
         <h2>Previous Responses</h2>
-        <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz9dpAy5BXPrdHlAkKh4QLPQ5wQZFZ86g4YKk17jU&s'} alt="Chat bubble" />
+        </center>
         <div className="container mx-2">
           {notes.length === 0 && 'No notes to display'}
           {notes.map((note) => {
